@@ -105,35 +105,50 @@ namespace LinkedLists
 
             //Console.WriteLine(Result.Value);
 
-            Console.WriteLine("Random Linked List:");
-            // 1 -> 2 -> 3 -> 4 -> null
-            // |    |    |    |
-            // v    v    v    v
-            // 3    1    3    2
-            RandomLinkedList.Node node1 = new RandomLinkedList.Node();
-            node1.Value = 1;
+            //Console.WriteLine("Random Linked List:");
+            //// 1 -> 2 -> 3 -> 4 -> null
+            //// |    |    |    |
+            //// v    v    v    v
+            //// 3    1    3    2
+            //RandomLinkedList.Node node1 = new RandomLinkedList.Node();
+            //node1.Value = 1;
 
-            RandomLinkedList.Node node2 = new RandomLinkedList.Node();
-            node2.Value = 2;
+            //RandomLinkedList.Node node2 = new RandomLinkedList.Node();
+            //node2.Value = 2;
 
-            RandomLinkedList.Node node3 = new RandomLinkedList.Node();
-            node3.Value = 3;
+            //RandomLinkedList.Node node3 = new RandomLinkedList.Node();
+            //node3.Value = 3;
 
-            RandomLinkedList.Node node4 = new RandomLinkedList.Node();
-            node4.Value = 4;
+            //RandomLinkedList.Node node4 = new RandomLinkedList.Node();
+            //node4.Value = 4;
 
-            node1.Next = node2;
-            node2.Next = node3;
-            node3.Next = node4;
-            node4.Next = null;
+            //node1.Next = node2;
+            //node2.Next = node3;
+            //node3.Next = node4;
+            //node4.Next = null;
 
-            node1.Random = node3;
-            node2.Random = node1;
-            node3.Random = node3;
-            node4.Random = node2;
+            //node1.Random = node3;
+            //node2.Random = node1;
+            //node3.Random = node3;
+            //node4.Random = node2;
 
-            RandomLinkedList.Node copy = RandomLinkedList.CloneWithExtraSpace(node1);
-            Console.ReadLine();
+            //RandomLinkedList.Node copy = RandomLinkedList.CloneWithExtraSpace(node1);
+            //Console.ReadLine();
+
+
+            // LinkedList
+            //var list = new LinkedList();
+            //list.addLast(item: 10);
+            //list.addLast(item: 20);
+            //list.addLast(item: 30);
+            //list.addFirst(item: 5);
+            //list.removeLast();
+            //list.removeFirst();
+            //Console.WriteLine(list.contains(10));
+            //Console.WriteLine(list.indexOf(20));
+            //Console.WriteLine(list.size());
+            //var array = list.ToArray();
+            //Console.WriteLine(string.Join(" ", array));
         }
     }
 }
