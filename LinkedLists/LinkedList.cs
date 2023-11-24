@@ -1,18 +1,20 @@
 ﻿using System;
 namespace DataStructures
 {
-    // We use linked list to store a list of objects in sequence
-    // a group of nodes that has two parts: Value and Address of the next node in the list.
-    // These nodes are linked together. we call the first node the Head and the last node the Tail.
+    // We use a linked list to store a sequence of objects, which consists of nodes. 
+    // Each node has two parts: a Value and the Address of the next node in the list.
+    // These nodes are linked together. we refer to the first node as the Head and the last node as the Tail.
+
     // RunTime Complexity:
     // LookUp by Value: O(n), by Address: O(n)
-    // Insert: At the End: O(1), At the Beginning: O(1) , In the middle: O(n) finding the item then updating the list
+    // Insert: At the End: O(1), At the Beginning: O(1), In the middle: O(n) (finding the item, then updating the list)
     // Delete: From the Beginning: O(1), From the End: O(n), From the Middle: O(n)
-    // LinkedList is one of the main fundamental data stucture that you need to master.
+
+    // A LinkedList is one of the fundamental data stucture that you need to master.
     // Building a LinkedList
     public class LinkedList
     {
-        // we only need Node class inside the LinkedList and we don't want ouside has access to it.
+        // We only need the Node class inside the LinkedList, and we don't want ouside access to it.
         private class Node
         {
             public Node(int value)
@@ -30,14 +32,14 @@ namespace DataStructures
         // TAIL
         private Node last;
 
-        // These are the essential methods that we need in a LinkedList
+        // These are the essential methods required in a LinkedList.
         // addFirst
         public void addFirst(int item)
         {
             var node = new Node(item);
 
-            // if the list empty
-            if(first == null)
+            // If the list is empty
+            if (first == null)
                 first = last = node;
             else
             {
@@ -51,8 +53,8 @@ namespace DataStructures
         {
             var node = new Node(item);
 
-            if(isEmpty())
-               first = last = node;
+            if (isEmpty())
+                first = last = node;
             else
             {
                 last.next = node;
@@ -78,11 +80,11 @@ namespace DataStructures
             // first -> 20, [20 -> 30]
             // we need two new references, first and second
             // we keep 20 somewhere
-               var second = first.next;
+            var second = first.next;
             // remove the first item by removing the link between 10 and 20
-               first.next = null;
+            first.next = null;
 
-               first = second;
+            first = second;
         }
 
         // deleteLast
@@ -90,8 +92,8 @@ namespace DataStructures
         {
             // [10 -> 20 -> 30]
             // last -> 30
-            // we need to traverse this list from the beginning and the moment we get to the one item before the last item
-            // we keep a reference to that node so we can update the last
+            // we traverse this list from the beginning, and when we reach the item just before the last one,
+            // we keep a reference to that node for updating the last item.
             // lst -> 20
 
             // edge case: empty list
@@ -99,24 +101,24 @@ namespace DataStructures
                 throw new Exception();
 
             // edge case: single item
-            if(last == first)
+            if (last == first)
             {
                 last = first = null;
                 return;
             }
 
             var previousNode = getPrevious(last);
-            // by removing the link to the last item, Garbage Collection will remove this item from the memory
+            // Removing the link to the last item allows Garbage Collection to reclaim the memory occupied by this item.
             last = previousNode;
             last.next = null;
         }
 
         // contains
         public bool contains(int item)
-        { 
+        {
             Node currentNode = first;
 
-            while(currentNode != null)
+            while (currentNode != null)
             {
                 if (currentNode.value == item)
                     return true;
@@ -157,7 +159,7 @@ namespace DataStructures
             Node currentNode = first;
             int size = 1;
 
-            while(currentNode.next != null)
+            while (currentNode.next != null)
             {
                 currentNode = currentNode.next;
                 size++;
@@ -174,7 +176,7 @@ namespace DataStructures
             Node nextNode = first.next;
             array[0] = currentValue;
 
-            for(int i = 1; i < size(); i++)
+            for (int i = 1; i < size(); i++)
             {
                 array[i] = nextNode.value;
                 nextNode = nextNode.next;
