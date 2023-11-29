@@ -11,7 +11,7 @@ namespace DataStructures
     // Delete: From the Beginning: O(1), From the End: O(n), From the Middle: O(n)
 
     // A LinkedList is one of the fundamental data stucture that you need to master.
-    // Building a LinkedList
+    // Here's how to build a linked list in C#:
     public class LinkedList
     {
         // We only need the Node class inside the LinkedList, and we don't want ouside access to it.
