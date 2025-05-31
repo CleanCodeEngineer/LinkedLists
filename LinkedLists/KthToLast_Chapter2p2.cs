@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LinkedLists
+﻿namespace LinkedLists
 {
     public class KthToLast_Chapter2p2
     {
+        // Question: Given the head of a singly linked list and an integer k, write a method to return the k-th to last node in the list.
+        // If k is 1, return the last node.
+        // If k is equal to the length of the list, return the head node.
+        // If k is greater than the length of the list, return null.
         public static LinkedListNode KthToLast(LinkedListNode head, int k)
         {
+            if (head == null || k <= 0) return null;
+
             var node = head;
             var kthnode = head;
 
