@@ -10,20 +10,21 @@ namespace LinkedLists
     {
         public static Node loopDetection(Node head)
         {
-            HashSet<Node> nodes = new HashSet<Node>();
-
+            HashSet<Node> visited = new HashSet<Node>();
             Node node = head;
 
-            while (node.Next != null && !nodes.Contains(node.Next))
+            while (node != null)
             {
-                nodes.Add(node.Next);
+                if (visited.Contains(node))
+                {
+                    return node; // Start of the loop
+                }
+
+                visited.Add(node);
                 node = node.Next;
             }
 
-            if (nodes.Contains(node.Next))
-                return node.Next;
-            else
-                return null;
+            return null; // No loop
         }
 
         // O(n) time and O(1) space.
